@@ -36,7 +36,7 @@ def upwind_method(c, h, dt, t_final, x_min=-1, x_max=5):
 c = 1.0
 t_target = 1.0
 
-# Case 1: h = 1/10, Δt = 0.75h
+# Case 1: h = 1/10, dt = 0.75h
 h1 = 1 / 10
 dt1 = 0.75 * h1
 x1, u1_numerical, t1, nu1 = upwind_method(c, h1, dt1, t_target)
@@ -44,7 +44,7 @@ u1_exact = exact_solution(x1, t1, c)
 
 x1_fine = np.linspace(-1, 5, 1000)
 u1_exact_fine = exact_solution(x1_fine, t1, c)
-# Case 2: h = 1/4, Δt = 0.75h
+# Case 2: h = 1/4, dt = 0.75h
 h2 = 1 / 4
 dt2 = 0.75 * h2
 x2, u2_numerical, t2, nu2 = upwind_method(c, h2, dt2, t_target)
@@ -69,7 +69,7 @@ axes[0].plot(
 axes[0].set_xlabel("x", fontsize=12)
 axes[0].set_ylabel("u(x,t)", fontsize=12)
 axes[0].set_title(
-    f"Case 1: h = 1/10, Δt = 0.75h\nt ≈ {t1:.4f}, ν = {nu1:.4f}", fontsize=11
+    rf"Case 1: h = 1/10, $\Delta t$ = 0.75h\nt ≈ {t1:.4f}, $\nu$ = {nu1:.4f}", fontsize=11
 )
 axes[0].legend(fontsize=10)
 axes[0].grid(True, alpha=0.3)
@@ -90,7 +90,7 @@ axes[1].plot(
 axes[1].set_xlabel("x", fontsize=12)
 axes[1].set_ylabel("u(x,t)", fontsize=12)
 axes[1].set_title(
-    f"Case 2: h = 1/4, Δt = 0.75h\nt ≈ {t2:.4f}, ν = {nu2:.4f}", fontsize=11
+    f"Case 2: h = 1/4, $\Delta t$ = 0.75h\nt ≈ {t2:.4f}, $\nu$ = {nu2:.4f}", fontsize=11
 )
 axes[1].legend(fontsize=10)
 axes[1].grid(True, alpha=0.3)
