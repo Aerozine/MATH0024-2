@@ -118,7 +118,7 @@ The absolute error explodes.
 ]
 
 = Spectral Analysis and Wave Propagation in Rectangular Waveguides
-= Spectral solution
+== Spectral solution
 The spectral problem equation is 
 $
 - frac(partial ^2 phi.alt,partial  x^2) = lambda phi.alt
