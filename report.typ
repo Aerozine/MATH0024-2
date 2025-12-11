@@ -14,7 +14,7 @@
 #let theorem-box = theorem-box.with(radius: 5pt)
 #import "@preview/physica:0.9.7": *
 #set document(
-  title: [MATH0024 PDEs Homework 1],
+  title: [MATH0024 PDEs Homework 2],
 )
 #title()
 Loïc Delbarre (S215072)
