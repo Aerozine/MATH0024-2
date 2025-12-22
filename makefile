@@ -24,6 +24,7 @@ $(Q4A_PDF): Q4A.py
 
 $(Q4B_PDF): Q4B.py
 	python3 Q4B.py
+
 clean:
 	rm -f $(REPORT) $(GRAPHDIR)/*
 
