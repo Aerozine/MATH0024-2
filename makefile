@@ -1,6 +1,3 @@
-# watch python 
-# watch typst
-#
 .PHONY: report graph RT clean
 REPORT:=report.pdf
 REPORT_SRC:=report.typ

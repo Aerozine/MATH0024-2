@@ -69,7 +69,7 @@ axes[0].plot(
 axes[0].set_xlabel("x", fontsize=12)
 axes[0].set_ylabel("u(x,t)", fontsize=12)
 axes[0].set_title(
-    rf"Case 1: h = 1/10, $\Delta t$ = 0.75h\nt ≈ {t1:.4f}, $\nu$ = {nu1:.4f}", fontsize=11
+    rf"Case 1: h = 1/10, $\triangle t$ = 0.75h"+"\n"+fr"t ≈ {t1:.4f}, $\nu$ = {nu1:.4f}", fontsize=11
 )
 axes[0].legend(fontsize=10)
 axes[0].grid(True, alpha=0.3)
@@ -90,7 +90,7 @@ axes[1].plot(
 axes[1].set_xlabel("x", fontsize=12)
 axes[1].set_ylabel("u(x,t)", fontsize=12)
 axes[1].set_title(
-    f"Case 2: h = 1/4, $\Delta t$ = 0.75h\nt ≈ {t2:.4f}, $\nu$ = {nu2:.4f}", fontsize=11
+    fr"Case 2: h = 1/4, $\triangle t$  = 0.75h"+ "\n" + fr"t≈ {t2:.4f}, $\nu$ = {nu2:.4f}", fontsize=11
 )
 axes[1].legend(fontsize=10)
 axes[1].grid(True, alpha=0.3)
@@ -98,3 +98,4 @@ axes[1].set_xlim([-0.5, 3.5])
 
 plt.tight_layout()
 plt.savefig("graph/Q4A.svg", dpi=300, bbox_inches="tight")
+plt.show()

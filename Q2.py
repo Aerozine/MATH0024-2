@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+from matplotlib.ticker import MaxNLocator
 lambda_val = -5
 t_max = 1.5
 u0 = 1
@@ -32,6 +32,10 @@ ax1.plot(t, u_exact, label="Exact Solution", color="black", linestyle="--", line
 ax1.grid(True)
 ax1.legend(loc="center left", bbox_to_anchor=(1.02, 0.5), borderaxespad=0)
 ax2.grid(True)
+ax1.xaxis.set_major_locator(MaxNLocator(nbins=5))
+ax1.yaxis.set_major_locator(MaxNLocator(nbins=5))
+ax2.xaxis.set_major_locator(MaxNLocator(nbins=5))
+ax2.yaxis.set_major_locator(MaxNLocator(nbins=5))
 plt.tight_layout()
 plt.savefig("graph/Q2S.svg")
 # unstable plot 
@@ -40,7 +44,10 @@ fig, (ax1, ax2) = plt.subplots(nrows=2, sharex=True, figsize=(9, 6))
 for dt in [0.4, 0.5, 0.6]:
     u_stable = forward_euler(dt, lambda_val, u0, t_max)
     ttime = np.linspace(0, t_max, len(u_stable))
-    ax1.plot(ttime, u_stable, label=rf"Unstable ($\Delta t$ = {dt})")
+    if (dt==0.4):
+        ax1.plot(ttime, u_stable, label=rf"Stable marginally ($\Delta t$ = {dt})")
+    else :
+        ax1.plot(ttime, u_stable, label=rf"Unstable ($\Delta t$ = {dt})")
     ax2.plot(
         ttime,
         np.abs(u_stable - u0 * np.exp(lambda_val * ttime)),
@@ -55,6 +62,10 @@ ax1.legend(
     bbox_to_anchor=(1.02, 0.5),
     borderaxespad=0,
 )
+ax1.xaxis.set_major_locator(MaxNLocator(nbins=5))
+ax1.yaxis.set_major_locator(MaxNLocator(nbins=5))
+ax2.xaxis.set_major_locator(MaxNLocator(nbins=5))
+ax2.yaxis.set_major_locator(MaxNLocator(nbins=5))
 ax2.grid(True)
 ax1.set_xlabel("Time t")
 ax1.set_ylabel("y")
@@ -62,3 +73,4 @@ ax2.set_xlabel("Time t")
 ax2.set_ylabel("absolute error")
 plt.tight_layout()
 plt.savefig("graph/Q2U.svg")
+plt.show()
